@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#0B111B">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="650dp"
+        android:orientation="vertical"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        android:paddingTop="36dp"
+        android:paddingBottom="28dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MUTFAK AJANS  /  GÜVENLİK"
+            android:textSize="11sp"
+            android:letterSpacing="0.17"
+            android:textColor="#91A2B8"
+            android:fontFamily="sans-serif-medium" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:text="Bir dokunuşla yardım."
+            android:textSize="27sp"
+            android:textStyle="bold"
+            android:textColor="#F2F5FA" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:text="Acil durumda güvenilir kişine sesli kritik alarm gönder."
+            android:textSize="14sp"
+            android:lineSpacingExtra="3dp"
+            android:textColor="#B0BDCB" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="40dp"
+            android:text="●  KRİTİK ALARM HAZIR"
+            android:textSize="11sp"
+            android:letterSpacing="0.12"
+            android:textColor="#FE8E93" />
+        <TextView
+            android:id="@+id/sosButton"
+            android:layout_width="226dp"
+            android:layout_height="226dp"
+            android:layout_marginTop="16dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/bg_sos"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:contentDescription="SOS gönder, iki saniye basılı tut"
+            android:text="SOS&#10;YARDIM ÇAĞIR"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:letterSpacing="0.07"
+            android:textColor="#FFFFFF" />
+        <TextView
+            android:id="@+id/holdHint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Göndermek için 2 saniye basılı tut"
+            android:gravity="center"
+            android:textSize="13sp"
+            android:textColor="#A4B4C9" />
+        <TextView
+            android:id="@+id/statusText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="23dp"
+            android:padding="14dp"
+            android:background="@drawable/bg_card"
+            android:text="Kurulumdan sonra test bildirimi gönder."
+            android:textSize="13sp"
+            android:lineSpacingExtra="3dp"
+            android:textColor="#C7D7E8" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/bg_card"
+            android:orientation="vertical"
+            android:padding="18dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="BAĞLANTI AYARLARI"
+                android:textSize="11sp"
+                android:letterSpacing="0.13"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="#E4EAF3" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:text="Gönderici adı"
+                android:textSize="12sp"
+                android:textColor="#AAB8CA" />
+            <EditText
+                android:id="@+id/senderInput"
+                android:layout_width="match_parent"
+                android:layout_height="49dp"
+                android:layout_marginTop="7dp"
+                android:background="@drawable/bg_input"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:singleLine="true"
+                android:maxLength="32"
+                android:inputType="textPersonName|textCapWords"
+                android:hint="Örn. Ayşe"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#64758C"
+                android:textSize="14sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="iPhone Bark anahtarı / test URL'si"
+                android:textSize="12sp"
+                android:textColor="#AAB8CA" />
+            <EditText
+                android:id="@+id/keyInput"
+                android:layout_width="match_parent"
+                android:layout_height="49dp"
+                android:layout_marginTop="7dp"
+                android:background="@drawable/bg_input"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:singleLine="true"
+                android:hint="Anahtarı veya URL'yi yapıştır"
+                android:inputType="textVisiblePassword|textNoSuggestions"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#64758C"
+                android:textSize="14sp" />
+            <Button
+                android:id="@+id/saveButton"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_button"
+                android:text="AYARLARI KAYDET"
+                android:textAllCaps="false"
+                android:textSize="13sp"
+                android:textColor="#FFFFFF" />
+            <Button
+                android:id="@+id/testButton"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="#314258"
+                android:text="TEST BİLDİRİMİ GÖNDER"
+                android:textAllCaps="false"
+                android:textSize="13sp"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="SOS: 45 saniyede bir 5 kritik uyarı. Bildirimlerin iletilmesi internet bağlantısına bağlıdır. Gerçek tehlikede 112'yi de ara."
+            android:textSize="12sp"
+            android:lineSpacingExtra="4dp"
+            android:textColor="#788AA3" />
+    </LinearLayout>
+</ScrollView>
