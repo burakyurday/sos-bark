@@ -5,7 +5,7 @@ on:
     branches:
       - main
 permissions:
-  contents: read
+  contents: write
 jobs:
   build:
     name: Build and verify APK
@@ -44,3 +44,16 @@ jobs:
           path: app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
           retention-days: 7
+      - name: Publish direct mobile APK link to repository
+        if: github.ref == 'refs/heads/main'
+        run: |
+          set -euo pipefail
+          mkdir -p downloads
+          cp app/build/outputs/apk/debug/app-debug.apk downloads/SOS-RedmiNote8-v1.0.1.apk
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add downloads/SOS-RedmiNote8-v1.0.1.apk
+          if ! git diff --cached --quiet; then
+            git commit -m "build: publish directly downloadable Android APK [skip ci]"
+            git push origin HEAD:main
+          fi
