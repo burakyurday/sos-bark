@@ -57,3 +57,33 @@ jobs:
             git commit -m "build: publish directly downloadable Android APK [skip ci]"
             git push origin HEAD:main
           fi
+
+  emulator-install-test:
+    name: Verify APK installation on Android 10 emulator
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Download compiled APK
+        uses: actions/download-artifact@v4
+        with:
+          name: SOS-RedmiNote8-APK
+          path: apk
+      - name: Enable hardware acceleration
+        run: |
+          sudo chmod 666 /dev/kvm || true
+      - name: Boot Android 10 and install APK
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 29
+          arch: x86_64
+          target: google_apis
+          profile: pixel_2
+          disable-animations: true
+          script: |
+            adb shell getprop ro.build.version.release
+            adb install apk/app-debug.apk
+            adb shell pm path com.mutfakajans.sos.redmi
+            adb shell am start -n com.mutfakajans.sos.redmi/com.mutfakajans.sos.MainActivity
+            sleep 3
+            adb logcat -d -t 150 | grep -E "FATAL EXCEPTION|Process: com.mutfakajans.sos.redmi" && exit 1 || true
