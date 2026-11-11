@@ -8,7 +8,7 @@ permissions:
   contents: read
 jobs:
   build:
-    name: Build debug APK
+    name: Build and verify APK
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
@@ -29,10 +29,18 @@ jobs:
           gradle-version: '8.9'
       - name: Compile debug APK
         run: gradle --no-daemon :app:assembleDebug
+      - name: Verify APK archive, zip alignment and signatures
+        run: |
+          APK="app/build/outputs/apk/debug/app-debug.apk"
+          unzip -t "$APK" > /dev/null
+          "$ANDROID_HOME/build-tools/35.0.0/zipalign" -c -v 4 "$APK"
+          "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose --min-sdk-version 26 "$APK"
+          "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging "$APK" | head -25
+          sha256sum "$APK"
       - name: Publish downloadable APK
         uses: actions/upload-artifact@v4
         with:
-          name: SOS-Bark-debug-APK
+          name: SOS-RedmiNote8-APK
           path: app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
           retention-days: 7
