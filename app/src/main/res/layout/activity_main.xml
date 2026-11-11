@@ -6,168 +6,153 @@
     android:background="#0B111B">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="650dp"
+        android:layout_height="match_parent"
+        android:minHeight="630dp"
         android:orientation="vertical"
-        android:paddingLeft="24dp"
-        android:paddingRight="24dp"
-        android:paddingTop="36dp"
-        android:paddingBottom="28dp">
-        <TextView
-            android:layout_width="wrap_content"
+        android:paddingLeft="28dp"
+        android:paddingRight="28dp"
+        android:paddingTop="26dp"
+        android:paddingBottom="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="MUTFAK AJANS  /  GÜVENLİK"
-            android:textSize="11sp"
-            android:letterSpacing="0.17"
-            android:textColor="#91A2B8"
-            android:fontFamily="sans-serif-medium" />
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="SOS  /  GÜVENLİK"
+                android:textSize="12sp"
+                android:fontFamily="sans-serif-medium"
+                android:letterSpacing="0.20"
+                android:textColor="#C5D0E0" />
+            <Button
+                android:id="@+id/settingsButton"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:minWidth="78dp"
+                android:background="@drawable/bg_button"
+                android:paddingLeft="14dp"
+                android:paddingRight="14dp"
+                android:text="Ayarlar"
+                android:textSize="12sp"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="13dp"
-            android:text="Bir dokunuşla yardım."
-            android:textSize="27sp"
-            android:textStyle="bold"
-            android:textColor="#F2F5FA" />
+            android:layout_marginTop="35dp"
+            android:text="Yardıma\nihtiyacın olduğunda."
+            android:textSize="33sp"
+            android:lineSpacingExtra="0dp"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="#F5F8FF" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="9dp"
-            android:text="Acil durumda güvenilir kişine sesli kritik alarm gönder."
-            android:textSize="14sp"
-            android:lineSpacingExtra="3dp"
-            android:textColor="#B0BDCB" />
+            android:layout_marginTop="12dp"
+            android:text="Tek hareketle acil kişine haber ver."
+            android:textSize="15sp"
+            android:textColor="#A4B4C9" />
+
         <TextView
+            android:id="@+id/connectionStatus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="40dp"
-            android:text="●  KRİTİK ALARM HAZIR"
+            android:text="●  ALICI BAĞLANTISI KAYITLI"
             android:textSize="11sp"
-            android:letterSpacing="0.12"
-            android:textColor="#FE8E93" />
-        <TextView
+            android:fontFamily="sans-serif-medium"
+            android:letterSpacing="0.08"
+            android:textColor="#77D3A9" />
+
+        <FrameLayout
             android:id="@+id/sosButton"
-            android:layout_width="226dp"
-            android:layout_height="226dp"
-            android:layout_marginTop="16dp"
+            android:layout_width="244dp"
+            android:layout_height="244dp"
             android:layout_gravity="center_horizontal"
-            android:background="@drawable/bg_sos"
-            android:gravity="center"
+            android:layout_marginTop="17dp"
             android:clickable="true"
             android:focusable="true"
-            android:contentDescription="SOS gönder, iki saniye basılı tut"
-            android:text="SOS&#10;YARDIM ÇAĞIR"
-            android:textStyle="bold"
-            android:textSize="25sp"
-            android:letterSpacing="0.07"
-            android:textColor="#FFFFFF" />
+            android:contentDescription="SOS. Yardım göndermek için iki saniye basılı tut"
+            android:background="@drawable/bg_sos"
+            android:elevation="8dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SOS"
+                    android:textColor="#FFFFFF"
+                    android:textSize="55sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.04" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BASILI TUT"
+                    android:textColor="#FFE5E8"
+                    android:textSize="12sp"
+                    android:fontFamily="sans-serif-medium"
+                    android:letterSpacing="0.22" />
+            </LinearLayout>
+        </FrameLayout>
+
         <TextView
             android:id="@+id/holdHint"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Göndermek için 2 saniye basılı tut"
+            android:layout_marginTop="22dp"
             android:gravity="center"
-            android:textSize="13sp"
-            android:textColor="#A4B4C9" />
+            android:text="Göndermek için 2 saniye basılı tut"
+            android:textSize="14sp"
+            android:textColor="#C8D4E6" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:minHeight="16dp" />
+
         <TextView
             android:id="@+id/statusText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="23dp"
-            android:padding="14dp"
+            android:minHeight="66dp"
+            android:gravity="center_vertical"
             android:background="@drawable/bg_card"
-            android:text="Kurulumdan sonra test bildirimi gönder."
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="13dp"
+            android:paddingBottom="13dp"
+            android:text="Hazır. Bir acil durumda SOS'a basılı tut."
             android:textSize="13sp"
-            android:lineSpacingExtra="3dp"
-            android:textColor="#C7D7E8" />
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
-            android:background="@drawable/bg_card"
-            android:orientation="vertical"
-            android:padding="18dp">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="BAĞLANTI AYARLARI"
-                android:textSize="11sp"
-                android:letterSpacing="0.13"
-                android:fontFamily="sans-serif-medium"
-                android:textColor="#E4EAF3" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="18dp"
-                android:text="Gönderici adı"
-                android:textSize="12sp"
-                android:textColor="#AAB8CA" />
-            <EditText
-                android:id="@+id/senderInput"
-                android:layout_width="match_parent"
-                android:layout_height="49dp"
-                android:layout_marginTop="7dp"
-                android:background="@drawable/bg_input"
-                android:paddingLeft="12dp"
-                android:paddingRight="12dp"
-                android:singleLine="true"
-                android:maxLength="32"
-                android:inputType="textPersonName|textCapWords"
-                android:hint="Örn. Ayşe"
-                android:textColor="#FFFFFF"
-                android:textColorHint="#64758C"
-                android:textSize="14sp" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:text="iPhone Bark anahtarı / test URL'si"
-                android:textSize="12sp"
-                android:textColor="#AAB8CA" />
-            <EditText
-                android:id="@+id/keyInput"
-                android:layout_width="match_parent"
-                android:layout_height="49dp"
-                android:layout_marginTop="7dp"
-                android:background="@drawable/bg_input"
-                android:paddingLeft="12dp"
-                android:paddingRight="12dp"
-                android:singleLine="true"
-                android:hint="Anahtarı veya URL'yi yapıştır"
-                android:inputType="textVisiblePassword|textNoSuggestions"
-                android:textColor="#FFFFFF"
-                android:textColorHint="#64758C"
-                android:textSize="14sp" />
-            <Button
-                android:id="@+id/saveButton"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/bg_button"
-                android:text="AYARLARI KAYDET"
-                android:textAllCaps="false"
-                android:textSize="13sp"
-                android:textColor="#FFFFFF" />
-            <Button
-                android:id="@+id/testButton"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginTop="5dp"
-                android:backgroundTint="#314258"
-                android:text="TEST BİLDİRİMİ GÖNDER"
-                android:textAllCaps="false"
-                android:textSize="13sp"
-                android:textColor="#FFFFFF" />
-        </LinearLayout>
+            android:lineSpacingExtra="2dp"
+            android:textColor="#CED9E9" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="SOS: 45 saniyede bir 5 kritik uyarı. Bildirimlerin iletilmesi internet bağlantısına bağlıdır. Gerçek tehlikede 112'yi de ara."
+            android:layout_marginTop="18dp"
+            android:gravity="center"
+            android:text="5 kritik alarm  ·  45 saniye arayla"
             android:textSize="12sp"
-            android:lineSpacingExtra="4dp"
-            android:textColor="#788AA3" />
+            android:textColor="#98A8BC" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="Gerçek acil durumda 112'yi de ara."
+            android:textSize="11sp"
+            android:textColor="#7889A1" />
     </LinearLayout>
 </ScrollView>

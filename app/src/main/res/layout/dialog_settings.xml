@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true"
+    android:background="#15202F">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        android:paddingTop="24dp"
+        android:paddingBottom="12dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bağlantı ayarları"
+            android:textColor="#FFFFFF"
+            android:textSize="23sp"
+            android:fontFamily="sans-serif-medium" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:text="Bu alan yalnızca ilk kurulumda veya alıcıyı değiştirmek istediğinde gerekli."
+            android:textSize="13sp"
+            android:lineSpacingExtra="3dp"
+            android:textColor="#A4B4C9" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="23dp"
+            android:text="Gönderici adı"
+            android:textColor="#C2D0E2"
+            android:textSize="12sp" />
+        <EditText
+            android:id="@+id/senderInput"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:singleLine="true"
+            android:inputType="textPersonName|textCapWords"
+            android:maxLength="32"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:background="@drawable/bg_input"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#6D8098"
+            android:hint="Örn. Ayşe"
+            android:textSize="14sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="iPhone Bark bağlantısı"
+            android:textColor="#C2D0E2"
+            android:textSize="12sp" />
+        <TextView
+            android:id="@+id/keyState"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="12dp"
+            android:background="@drawable/bg_card"
+            android:text="●  Bark anahtarı kayıtlı ve gizli."
+            android:textColor="#77D3A9"
+            android:textSize="13sp" />
+        <Button
+            android:id="@+id/changeKeyButton"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginTop="9dp"
+            android:text="Anahtarı değiştir"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#304059" />
+        <EditText
+            android:id="@+id/keyInput"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="11dp"
+            android:singleLine="true"
+            android:inputType="textPassword"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:background="@drawable/bg_input"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#6D8098"
+            android:hint="Yeni Bark anahtarı / URL"
+            android:textSize="13sp" />
+        <Button
+            android:id="@+id/testButton"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_marginTop="20dp"
+            android:text="Test bildirimi gönder"
+            android:textAllCaps="false"
+            android:textSize="13sp"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#304059" />
+    </LinearLayout>
+</ScrollView>
