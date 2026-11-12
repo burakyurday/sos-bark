@@ -1,9 +1,8 @@
-# GitHub Actions ile APK oluşturma
+# Android APK kurulumu
 
-1. Repository'de **Actions** sekmesini aç.
-2. **SOS Android APK** iş akışına gir. `main` dalına kod gönderildiğinde otomatik çalışır.
-3. Yeşil sonuç alındığında `SOS-Bark-debug-APK` artifact'ını indir. İçinde `app-debug.apk` vardır.
-4. Android'de bilinmeyen kaynaklardan yüklemeye izin verip APK'yı kur.
-5. iPhone'da Bark'ı kurup Kritik Uyarılar iznini aç. Bark anahtarını sadece Android cihazdaki uygulama alanına gir; GitHub'a ekleme.
+1. [Doğrudan debug APK](https://github.com/burakyurday/sos-bark/raw/refs/heads/main/downloads/SOS-RedmiNote8-v1.1.0.apk) veya [Actions](https://github.com/burakyurday/sos-bark/actions/workflows/build-apk.yml) üzerinden son başarılı derlemedeki `SOS-RedmiNote8-v1.1.0-APK` artifact'ını kullan.
+2. Artifact ZIP olarak indiyse `app-debug.apk` dosyasını çıkar. APK'yı Android dosya yöneticisinden aç. İşletim sistemi uyarılarını değerlendir ve yalnızca doğruladığın kaynaktan yükle.
+3. iPhone'da Bark'ı kur ve bildirim izinlerini yapılandır. Bark anahtarını yalnızca Android uygulamasına gir.
+4. Önce test butonunu kullan ve bildirimin gerçek iPhone'da alındığını doğrula.
 
-Gerçek acil durumlarda 112 kullanılmalıdır. Bark sunucusunun isteği kabul etmesi iPhone'a kesin teslim kanıtı değildir.
+Bu debug sürümünün paket adı `com.mutfakajans.sos.redmi`. Debug imzası değiştiğinde güncelleme için yeniden kurulum gerekebilir. Gerçek acil durumlarda 112'yi kullan; API isteğinin kabul edilmesi kesin teslimat kanıtı değildir.
