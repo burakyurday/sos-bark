@@ -1,5 +1,15 @@
 # SOS Bark Android
 
+**A lightweight Android-to-iPhone SOS notification prototype.**
+
+Android application that sends an SOS request through Bark to an iPhone. Built for personal notification experiments, not as a replacement for emergency services.
+
+`Android` · `Java 17` · `Gradle` · `Bark API`
+
+> **Development status:** Prototype. Notification delivery depends on network access, Bark and iOS configuration. Test end-to-end before relying on it.
+
+---
+
 Arkadaşının Android telefonundan iPhone'daki Bark uygulamasına kritik bildirim göndermek için basit SOS prototipi.
 
 ## Redmi Note 8 için kurulum
